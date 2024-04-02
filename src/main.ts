@@ -40,6 +40,8 @@ async function run(): Promise<void> {
       config.commandScriptName,
       config.annotations,
       config.verbose,
+      config.jsonInput,
+      config.jsonInputFileName,
       config.workingDirectory,
     );
 
