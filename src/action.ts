@@ -60,7 +60,7 @@ export function getConfig(): ActionConfig {
     ignoreResults: core.getBooleanInput("ignore_results", { required: false }),
     workingDirectory: core.getInput("working_directory", { required: false }) || undefined,
     jsonInput: core.getBooleanInput("json_input", { required: false }),
-    jsonInputFileName: core.getInput("json_input_file_name", { required: false }) || "knip.json",
+    jsonInputFileName: core.getInput("json_input_file_name", { required: false }) || "knip-results.json",
   };
 }
 
