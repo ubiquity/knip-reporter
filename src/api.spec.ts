@@ -68,6 +68,7 @@ describe("API", () => {
     ignoreResults: false,
     jsonInput: false,
     jsonInputFileName: "knip-results.json",
+    pullRequestNumber: 0,
     workingDirectory: "."
   };
 
