@@ -41,6 +41,8 @@ describe("Action", () => {
         case "command_script_name":
         case "comment_id":
         case "working_directory":
+        case "json_input_file_name":
+        case "pull_request_number":
           // eslint-disable-next-line @typescript-eslint/no-unsafe-return
           return mockEnvConfig[input];
         default:
@@ -53,6 +55,7 @@ describe("Action", () => {
         case "annotations":
         case "verbose":
         case "ignore_results":
+        case "json_input":
           // eslint-disable-next-line @typescript-eslint/no-unsafe-return
           return mockEnvConfig[input];
         default:
