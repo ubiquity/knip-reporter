@@ -66,7 +66,10 @@ describe("API", () => {
     annotations: true,
     verbose: false,
     ignoreResults: false,
-    workingDirectory: ".",
+    jsonInput: false,
+    jsonInputFileName: "knip-results.json",
+    pullRequestNumber: 0,
+    workingDirectory: "."
   };
 
   beforeEach(() => {

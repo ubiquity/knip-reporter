@@ -21,9 +21,9 @@ async function run(): Promise<void> {
     core.info("- knip-reporter action");
     core.info(configToStr(config));
 
-    if (github.context.payload.pull_request === undefined) {
+    if (github.context.payload.pull_request === undefined && github.context.eventName !== "workflow_run") {
       throw new Error(
-        `knip-reporter currently only supports 'pull_request' events, current event: ${github.context.eventName}`,
+        `knip-reporter currently only supports 'pull_request' and 'workflow_run' events, current event: ${github.context.eventName}`,
       );
     }
 
@@ -40,12 +40,14 @@ async function run(): Promise<void> {
       config.commandScriptName,
       config.annotations,
       config.verbose,
+      config.jsonInput,
+      config.jsonInputFileName,
       config.workingDirectory,
     );
 
     await runCommentTask(
       config.commentId,
-      github.context.payload.pull_request.number,
+      github.context.payload.pull_request?.number || config.pullRequestNumber,
       knipSections,
     );
 

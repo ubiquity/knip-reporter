@@ -33,6 +33,18 @@ inputs:
     description: Directory in which to run the knip action.
     default: "."
     required: false
+  json_input:
+    description: Use JSON results generated in another run.
+    default: false
+    required: false
+  json_input_file_name:
+    description: JSON results file name.
+    default: "knip-results.json"
+    required: false
+  pull_request_number:
+    description: Pull request number.
+    default: 0
+    required: false
 runs:
   using: node20
   main: dist/index.mjs
